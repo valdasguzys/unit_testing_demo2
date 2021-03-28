@@ -1,1 +1,1 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":128:{a:2:{s:7:"defects";a:1:{s:28:"EmployeeContollerTest::test1";i:3;}s:5:"times";a:1:{s:28:"EmployeeContollerTest::test1";d:0.019;}}}
+C:37:"PHPUnit\Runner\DefaultTestResultCache":310:{a:2:{s:7:"defects";a:2:{s:28:"EmployeeContollerTest::test1";i:3;s:48:"EmployeeContollerTest::testGetAllJsonReturnsJson";i:3;}s:5:"times";a:3:{s:28:"EmployeeContollerTest::test1";d:0.01;s:48:"EmployeeContollerTest::testGetAllJsonReturnsJson";d:0.002;s:28:"EmployeeContollerTest::test2";d:0.010999999999999999;}}}
