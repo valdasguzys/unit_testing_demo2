@@ -17,6 +17,7 @@ class EmployeeRepository {
         $this->password = "mysql";
         $this->database = "qademo";
         $this->conn = mysqli_connect($this->server, $this->username, $this->password, $this->database);
+
     }
      
     public function getAll() : array {

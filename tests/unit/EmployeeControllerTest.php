@@ -43,4 +43,29 @@ class EmployeeContollerTest extends TestCase {
 
         assertEquals('[{"id":1,"name":"Petras"},{"id":2,"name":"Jonas"}]', $res); 
     }
+    
+
+    //stub test
+    public function testStub() {
+        $stub = $this->createStub(EmployeeRepository::class);
+        $stub->method('getAll')->willReturn(array(new Employee(1, "Petras"), new Employee(2, "Jonas")));
+        $employeeController = new EmployeeController($stub);
+
+        $res = $employeeController->getAllJsonWithMetaInformation(); 
+
+        assertEquals('{"employees":[{"id":1,"name":"Petras"},{"id":2,"name":"Jonas"}],"count":2}', $res); 
+    }
+
+    
+    //mock test
+    public function testGetAllJsonWithMetaReturnsJson() {
+        $mock = $this->getMockBuilder(EmployeeRepository::class)->getMock();
+        $employeeController = new EmployeeController($mock);
+        $mock->expects($this->exactly(1))->method('getAll')->willReturn(array(new Employee(1, "Petras"), new Employee(2, "Jonas")));
+
+        $res = $employeeController->getAllJsonWithMetaInformation(); 
+
+        assertEquals('{"employees":[{"id":1,"name":"Petras"},{"id":2,"name":"Jonas"}],"count":2}', $res); 
+    }
+
 }
